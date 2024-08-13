@@ -59,27 +59,28 @@ class LinkedList:
             self.head= self.head.next
    
     def deleteAtIndex(self, index):
+        # If the list is empty, return
         if self.head is None:
+            print("List is empty. Cannot delete.")
             return
+        
+        # If the index is 0, delete from the beginning
+        if index == 0:
+            self.deleteFromBeginning()
+            return
+
         curr_node = self.head
         position = 0
-        if position == index:
-            self.deleteFromBeginning()
-        else:
-            while(curr_node.next != None and position != index ):
-                curr_node = curr_node.next
-                position += 1
-            if curr_node != None:
-                curr_node.next = curr_node.next.next
-            else:
-                print("Index not found")
- 
- 
- 
- 
- 
-ll = LinkedList()
-ll.insertAtBeginning("Apple",10)
-ll.insertAtBeginning("Orange",40)
-ll.traverse()
-print("==================")
+        
+        # Traverse to the node just before the one to delete
+        while curr_node is not None and position < index - 1:
+            curr_node = curr_node.next
+            position += 1
+
+        # If curr_node is None, the index is out of bounds
+        if curr_node is None or curr_node.next is None:
+            print("Index not found")
+            return
+
+        # Delete the node at the specified index
+        curr_node.next = curr_node.next.next
