@@ -10,7 +10,7 @@ def test_linked_list():
 
     assert ll.head.itemName == "Pineapple", "Test Case 1 Failed"
     assert ll.head.next.itemName == "Orange", "Test Case 2 Failed"
-    assert ll.head.next.next.itemName == "Orange", "Test Case 3 Failed"
+    assert ll.head.next.next.itemName == "Apple", "Test Case 3 Failed"
 
     ll.traverse()
     print("==================")
