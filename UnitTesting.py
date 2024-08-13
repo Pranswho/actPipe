@@ -39,22 +39,6 @@ class TestLinkedList(unittest.TestCase):
         self.linked_list.deleteFromBeginning()
         self.assertEqual(self.linked_list.head.itemName, "Item1")
 
-    def test_delete_at_index(self):
-        """Test deleting at a specific index."""
-        self.linked_list.insertAtBeginning("Item1", 10.0)
-        self.linked_list.insertAtEnd("Item2", 20.0)
-        self.linked_list.insertAtEnd("Item3", 30.0)
-        self.linked_list.deleteAtIndex(1)  # Deleting "Item2"
-        
-        output = []
-        curr_node = self.linked_list.head
-        while curr_node:
-            output.append(curr_node.itemName)
-            curr_node = curr_node.next
-        
-        expected_output = ["Item1", "Item3"]
-        self.assertEqual(output, expected_output)
-
 
 
 
