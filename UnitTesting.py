@@ -56,4 +56,24 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(output, expected_output)
 
 
+    def test_traverse(self):
+        """Test the traversal of the linked list."""
+        self.linked_list.insertAtBeginning("Item1", 10.0)
+        self.linked_list.insertAtEnd("Item2", 20.0)
+        self.linked_list.insertAtEnd("Item3", 30.0)
+
+        output = []
+        curr_node = self.linked_list.head
+        while curr_node:
+            output.append((curr_node.itemName, curr_node.price))
+            curr_node = curr_node.next
+        
+        expected_output = [
+            ("Item1", 10.0),
+            ("Item2", 20.0),
+            ("Item3", 30.0),
+        ]
+        self.assertEqual(output, expected_output)
+
+
 
