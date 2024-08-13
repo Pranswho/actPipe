@@ -12,9 +12,5 @@ def test_linked_list():
     assert ll.head.next.itemName == "Orange", "Test Case 2 Failed"
     assert ll.head.next.next.itemName == "Apple", "Test Case 3 Failed"
 
-    ll.traverse()
-    print("==================")
-
-
 if __name__ == "__main__":
     test_linked_list()
