@@ -1,5 +1,5 @@
 import unittest
-from LinkedList import LinkedList  # Adjust the import according to your file structure
+from LinkedList import LinkedList 
 
 class TestLinkedList(unittest.TestCase):
     
@@ -105,5 +105,3 @@ class TestLinkedList(unittest.TestCase):
             self.linked_list.deleteFromBeginning()
             self.assertIn("List Empty", log.output)
 
-if __name__ == '__main__':
-    unittest.main()
